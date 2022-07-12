@@ -1,0 +1,19 @@
+FROM node:16-alpine
+
+WORKDIR /app
+
+COPY ./frontend/package.json .
+
+RUN npm install --legacy-peer-deps
+
+# copies all the code over
+COPY ./frontend .
+
+CMD ["npm", "run", "start"]
+
+
+# docker build -f .\dockerfile.dev -t tiger2 .
+
+
+# 3/31/2022 10:01 PM - leaving out frontend copy action leaves container broken even though npm modules are there and files are mapped.
+# docker run -v ${pwd}\\frontend:/app -v /app/node_modules -p 3000:3000 tiger2
