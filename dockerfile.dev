@@ -6,7 +6,7 @@ COPY ./frontend/package.json .
 
 RUN npm install --legacy-peer-deps
 
-# COPY ./frontend .
+COPY ./frontend .
 
 CMD ["npm", "run", "start"]
 
