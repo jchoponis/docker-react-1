@@ -4,4 +4,4 @@ services:
 before_install:
   - docker build -f dockerfile.dev -t jchoponis/docker-react-1 .
 script:
-  - docker run -e CI=true jchoponis/docker-react-1 npm run test
+  - docker run jchoponis/docker-react-1 npm run test -- --coverage
