@@ -12,6 +12,7 @@ FROM nginx
 COPY --from=builder /app/build /usr/share/nginx/html
 #default cmd for nginx container starts nginx looking for content in the /usr/share/nginx/html area!
 
+EXPOSE 80
 
 # build with default multi-step "dockerfile" in pwd
 # docker build -t multipass . 
