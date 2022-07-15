@@ -5,3 +5,14 @@ before_install:
   - docker build -f dockerfile.dev -t jchoponis/docker-react-1 .
 script:
   - docker run -e CI=true jchoponis/docker-react-1 npm run test
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "docker-react-1"
+  env: "Dockerreact1-env-1"
+  bucket_name: "elasticbeanstalk-us-east-1-879577878990"
+  bucket_path: "docker-react-1"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
