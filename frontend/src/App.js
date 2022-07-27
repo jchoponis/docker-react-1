@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <p className="App-intro">changed on jc/feature1 branch on 7/26/2022.</p>
       </header>
     </div>
   );
